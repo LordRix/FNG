@@ -1,0 +1,11 @@
+
+
+CREATE COMPUTE MODULE DummyLoad_Making_a_load
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE dummy BOOLEAN;
+		SET dummy = SLEEP(2000); /* attempt to sleep for 2 second(s) */
+		RETURN TRUE;
+	END;
+
+END MODULE;

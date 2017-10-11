@@ -1,0 +1,17 @@
+
+
+CREATE COMPUTE MODULE WithoutMQ_SameData_Create_Loop
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE counter INTEGER 0;
+		SET OutputRoot = InputRoot;
+		
+		WHILE counter < 3 DO
+			SET counter = counter + 1;
+			PROPAGATE DELETE NONE;
+		END WHILE;	
+		RETURN FALSE;
+	END;
+
+
+END MODULE;
